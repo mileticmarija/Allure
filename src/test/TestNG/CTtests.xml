@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login tests" thread-count="1">
+    <parameter name="browser" value="CHROME"/>
+    <parameter name="email" value="mail588@gmail.com"/>
+    <parameter name="password" value="Pass123!!"/>
+    <parameter name="ime" value="Marija"/>
+    <parameter name="prezime" value="Miletic"/>
+    <parameter name="cPass" value="Pass123!!"/>
+    <parameter name="cMessage" value="Hvala na registraciji. Molimo proverite email i aktivirajte Vaš nalog."/>
+
+
+    <test name="Create account">
+        <classes>
+            <class name="tests.CTTests.CTcreateTest">
+                <methods>
+                    <exclude name="wrongCpass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CT login user">
+        <classes>
+            <class name="tests.CTTests.CTloginTests"/>
+        </classes>
+    </test>
+
+
+</suite>
